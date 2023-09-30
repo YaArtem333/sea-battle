@@ -1,0 +1,14 @@
+/home/artem/C#_Programming/sea-battle/bin/Debug/net7.0/sea-battle
+/home/artem/C#_Programming/sea-battle/bin/Debug/net7.0/sea-battle.deps.json
+/home/artem/C#_Programming/sea-battle/bin/Debug/net7.0/sea-battle.runtimeconfig.json
+/home/artem/C#_Programming/sea-battle/bin/Debug/net7.0/sea-battle.dll
+/home/artem/C#_Programming/sea-battle/bin/Debug/net7.0/sea-battle.pdb
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.GeneratedMSBuildEditorConfig.editorconfig
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.AssemblyInfoInputs.cache
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.AssemblyInfo.cs
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.csproj.CoreCompileInputs.cache
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.dll
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/refint/sea-battle.dll
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.pdb
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.genruntimeconfig.cache
+/home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/ref/sea-battle.dll
