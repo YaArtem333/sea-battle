@@ -56,6 +56,7 @@ class Program
                     if (IsShipDestroyed(enemyGrid, row, col))
                     {
                         Console.WriteLine("Корабль уничтожен!");
+                        DestroySurroundingArea(enemyGrid, row, col);
                     }
 
                     if (!HasShipsLeft(enemyGrid))
@@ -177,6 +178,33 @@ class Program
 
         // Если не найдены другие точки корабля вокруг данной, то корабль уничтожен
         return true;
+    }
+
+    static void DestroySurroundingArea(char[,] targetGrid, int row, int col)
+    {
+        int gridSize = targetGrid.GetLength(0);
+
+        // Проверяем, находится ли текущая клетка в пределах поля и не является ли она уже обработанной (0)
+        if (row >= 0 && row < gridSize && col >= 0 && col < gridSize && targetGrid[row, col] != '0')
+        {
+            // Перед тем как заменить текущую клетку, проверим, была ли она 'X'
+            bool isX = targetGrid[row, col] == 'X';
+
+            targetGrid[row, col] = 'O';
+            // Если текущая клетка была 'X', вызываем функцию рекурсивно для соседних клеток
+            if (isX)
+            {
+                DestroySurroundingArea(targetGrid, row - 1, col);
+                DestroySurroundingArea(targetGrid, row + 1, col);
+                DestroySurroundingArea(targetGrid, row, col - 1);
+                DestroySurroundingArea(targetGrid, row, col + 1);
+                DestroySurroundingArea(targetGrid, row - 1, col-1);
+                DestroySurroundingArea(targetGrid, row - 1, col+1);
+                DestroySurroundingArea(targetGrid, row + 1, col-1);
+                DestroySurroundingArea(targetGrid, row + 1, col+1);
+                targetGrid[row, col] = 'X';
+            }
+        }
     }
 
     static bool HasShipsLeft(char[,] targetGrid)
