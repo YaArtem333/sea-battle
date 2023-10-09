@@ -12,3 +12,17 @@
 /home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.pdb
 /home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/sea-battle.genruntimeconfig.cache
 /home/artem/C#_Programming/sea-battle/obj/Debug/net7.0/ref/sea-battle.dll
+/Users/aermilov/University/C#/sea-battle/bin/Debug/net7.0/sea-battle
+/Users/aermilov/University/C#/sea-battle/bin/Debug/net7.0/sea-battle.deps.json
+/Users/aermilov/University/C#/sea-battle/bin/Debug/net7.0/sea-battle.runtimeconfig.json
+/Users/aermilov/University/C#/sea-battle/bin/Debug/net7.0/sea-battle.dll
+/Users/aermilov/University/C#/sea-battle/bin/Debug/net7.0/sea-battle.pdb
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.AssemblyInfoInputs.cache
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.AssemblyInfo.cs
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.csproj.CoreCompileInputs.cache
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.dll
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/refint/sea-battle.dll
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.pdb
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/sea-battle.genruntimeconfig.cache
+/Users/aermilov/University/C#/sea-battle/obj/Debug/net7.0/ref/sea-battle.dll

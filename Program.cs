@@ -1,16 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
-class Program
+
+class Program // User Layer
 {
-    static char[,] grid = new char[10, 10];
-    static char[,] enemyGrid = new char[10, 10];
-    static Random random = new Random();
-
-    static void Main()
+    public static void Main()
     {
-        InitializeGrids();
-        PlaceMyShips(grid);
-        PlaceEnemyShips(); // Новая функция для размещения кораблей противника
+        Functional.InitializeGrids();
+        Functional.PlaceMyShips(Functional.grid);
+        Functional.PlaceEnemyShips(); // Новая функция для размещения кораблей противника
 
         Console.WriteLine("Добро пожаловать в игру 'Морской бой'!");
         Console.WriteLine("Вы готовы к битве!");
@@ -18,8 +17,8 @@ class Program
         do
         {
             Console.Clear();
-            DisplayMyGrid(grid, "Ваше поле:");
-            DisplayEnemyGrid();
+            Functional.DisplayMyGrid(Functional.grid, "Ваше поле:");
+            Functional.DisplayEnemyGrid();
 
             Console.WriteLine("Введите координаты выстрела (например, A5 или A10):");
             string input = Console.ReadLine().ToUpper();
@@ -43,31 +42,31 @@ class Program
                     continue;
                 }
 
-                if (enemyGrid[row, col] == ' ')
+                if (Functional.enemyGrid[row, col] == ' ')
                 {
                     Console.WriteLine("Промах!");
-                    enemyGrid[row, col] = 'O';
+                    Functional.enemyGrid[row, col] = 'O';
                 }
-                else if (enemyGrid[row, col] == 'S')
+                else if (Functional.enemyGrid[row, col] == 'S')
                 {
                     Console.WriteLine("Попадание!");
-                    enemyGrid[row, col] = 'X';
+                    Functional.enemyGrid[row, col] = 'X';
 
-                    if (IsShipDestroyed(enemyGrid, row, col))
+                    if (Functional.IsShipDestroyed(Functional.enemyGrid, row, col))
                     {
                         Console.WriteLine("Корабль уничтожен!");
-                        DestroySurroundingArea(enemyGrid, row, col);
+                        Functional.DestroySurroundingArea(Functional.enemyGrid, row, col);
                     }
 
-                    if (!HasShipsLeft(enemyGrid))
+                    if (!Functional.HasShipsLeft(Functional.enemyGrid))
                     {
                         Console.Clear();
-                        DisplayMyGrid(grid, "Ваше поле:");
+                        Functional.DisplayMyGrid(Functional.grid, "Ваше поле:");
                         Console.WriteLine("Поздравляем! Вы победили!");
                         break;
                     }
                 }
-                else if (enemyGrid[row, col] == 'O' || enemyGrid[row, col] == 'X')
+                else if (Functional.enemyGrid[row, col] == 'O' || Functional.enemyGrid[row, col] == 'X')
                 {
                     Console.WriteLine("Вы уже стреляли в это место.");
                 }
@@ -81,12 +80,19 @@ class Program
             Console.ReadLine();
 
             // Противник делает случайный выстрел
-            EnemyTurn();
+            Functional.EnemyTurn();
         }
         while (true);
     }
+}
 
-    static void InitializeGrids()
+class Functional
+{
+    public static char[,] grid = new char[10, 10];
+    public static char[,] enemyGrid = new char[10, 10];
+    static Random random = new Random();
+
+    public static void InitializeGrids()
     {
         for (int i = 0; i < 10; i++)
         {
@@ -98,7 +104,7 @@ class Program
         }
     }
 
-    static void DisplayMyGrid(char[,] grid, string title)
+    public static void DisplayMyGrid(char[,] grid, string title)
     {
         Console.WriteLine(title);
         Console.WriteLine("  A B C D E F G H I J");
@@ -113,7 +119,7 @@ class Program
         }
     }
 
-    static void DisplayEnemyGrid()
+    public static void DisplayEnemyGrid()
     {
         Console.WriteLine("Поле противника:");
         Console.WriteLine("  A B C D E F G H I J");
@@ -136,7 +142,7 @@ class Program
         }
     }
     
-    static void EnemyTurn()
+    public static void EnemyTurn()
     {
         int row, col;
         do
@@ -165,7 +171,7 @@ class Program
         }
     }
 
-    static bool IsShipDestroyed(char[,] targetGrid, int row, int col)
+    public static bool IsShipDestroyed(char[,] targetGrid, int row, int col)
     {
         // Проверяем, есть ли ещё точки корабля вокруг данной точки
         if ((row - 1 >= 0 && targetGrid[row - 1, col] == 'S') ||
@@ -180,7 +186,7 @@ class Program
         return true;
     }
 
-    static void DestroySurroundingArea(char[,] targetGrid, int row, int col)
+    public static void DestroySurroundingArea(char[,] targetGrid, int row, int col)
     {
         int gridSize = targetGrid.GetLength(0);
 
@@ -207,7 +213,7 @@ class Program
         }
     }
 
-    static bool HasShipsLeft(char[,] targetGrid)
+    public static bool HasShipsLeft(char[,] targetGrid)
     {
         foreach (var cell in targetGrid)
         {
@@ -220,7 +226,7 @@ class Program
     }
 
 
-    static void PlaceMyShips(char[,] targetGrid)
+    public static void PlaceMyShips(char[,] targetGrid)
     {
         Console.Clear();
         DisplayMyGrid(targetGrid, "Расстановка ваших кораблей:");
@@ -287,7 +293,7 @@ class Program
         }
     }
     
-    static void PlaceMyShip(int startRow, int startCol, int length, char direction, char[,] targetGrid)
+    public static void PlaceMyShip(int startRow, int startCol, int length, char direction, char[,] targetGrid)
     {
         if (direction == 'V')
         {
@@ -305,7 +311,7 @@ class Program
         }
     }
     
-    static bool IsVerticalShipPlacementValid(int startRow, int startCol, int length, char[,] targetGrid)
+    public static bool IsVerticalShipPlacementValid(int startRow, int startCol, int length, char[,] targetGrid)
     {
         if (startRow + length > 10)
         {
@@ -330,7 +336,7 @@ class Program
         return true;
     }
 
-    static bool IsHorizontalShipPlacementValid(int startRow, int startCol, int length, char[,] targetGrid)
+    public static bool IsHorizontalShipPlacementValid(int startRow, int startCol, int length, char[,] targetGrid)
     {
         if (startCol + length > 10)
         {
@@ -356,7 +362,7 @@ class Program
     }
 
 
-    static void PlaceEnemyShips()
+    public static void PlaceEnemyShips()
     {
         PlaceRandomEnemyShip(4, enemyGrid);
         PlaceRandomEnemyShip(3, enemyGrid);
@@ -370,7 +376,7 @@ class Program
         PlaceRandomEnemyShip(1, enemyGrid);
     }
 
-    static void PlaceRandomEnemyShip(int length, char[,] targetGrid)
+    public static void PlaceRandomEnemyShip(int length, char[,] targetGrid)
     {
         int row, col;
         char direction;
@@ -386,7 +392,7 @@ class Program
         PlaceEnemyShip(row, col, length, direction, targetGrid);
     }
 
-    static bool IsEnemyShipPlacementValid(int startRow, int startCol, int length, char direction, char[,] targetGrid)
+    public static bool IsEnemyShipPlacementValid(int startRow, int startCol, int length, char direction, char[,] targetGrid)
     {
         if (direction == 'H')
         {
@@ -451,7 +457,7 @@ class Program
         return true;
     }
 
-    static void PlaceEnemyShip(int startRow, int startCol, int length, char direction, char[,] targetGrid)
+    public static void PlaceEnemyShip(int startRow, int startCol, int length, char direction, char[,] targetGrid)
     {
         if (direction == 'H')
         {
