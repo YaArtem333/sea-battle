@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace sea_battle
 {
-    public class Data
+    public class Data // Data Layer
     {
         private string DbPath { get; set; } = "";
         

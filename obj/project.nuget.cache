@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FrMvfjslhOQxooAeYmU/eY3YjuuAIrH9qyyfO3MGh1A6qut/udaY3yelYxvGno9Ee8UvsRIEZ+1zGqKovKQPVQ==",
+  "dgSpecHash": "F/KdhhLKXVFAEpwCddFc0BRc8JvGb83vyaEwxxnw43hOlYAb7HizgwGinw26W8kd4ED9Ye9mvntZNB0eWee7Ew==",
   "success": true,
-  "projectFilePath": "/Users/aermilov/University/C#/sea-battle/sea-battle.csproj",
+  "projectFilePath": "/Users/aermilov/C#Projects/sea-battle/sea-battle.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

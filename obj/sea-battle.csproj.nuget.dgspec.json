@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aermilov/University/C#/sea-battle/sea-battle.csproj": {}
+    "/Users/aermilov/C#Projects/sea-battle/sea-battle.csproj": {}
   },
   "projects": {
-    "/Users/aermilov/University/C#/sea-battle/sea-battle.csproj": {
+    "/Users/aermilov/C#Projects/sea-battle/sea-battle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aermilov/University/C#/sea-battle/sea-battle.csproj",
+        "projectUniqueName": "/Users/aermilov/C#Projects/sea-battle/sea-battle.csproj",
         "projectName": "sea-battle",
-        "projectPath": "/Users/aermilov/University/C#/sea-battle/sea-battle.csproj",
+        "projectPath": "/Users/aermilov/C#Projects/sea-battle/sea-battle.csproj",
         "packagesPath": "/Users/aermilov/.nuget/packages/",
-        "outputPath": "/Users/aermilov/University/C#/sea-battle/obj/",
+        "outputPath": "/Users/aermilov/C#Projects/sea-battle/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/aermilov/.nuget/NuGet/NuGet.Config"
