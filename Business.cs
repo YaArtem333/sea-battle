@@ -60,7 +60,7 @@ namespace sea_battle
                 Console.WriteLine();
             }
         }
-        
+
         public static void EnemyTurn()
         {
             int row, col;
@@ -211,7 +211,7 @@ namespace sea_battle
                 number_of_ships += 1;
             }
         }
-        
+
         public static void PlaceMyShip(int startRow, int startCol, int length, char direction, char[,] targetGrid)
         {
             if (direction == 'V')
@@ -229,7 +229,7 @@ namespace sea_battle
                 }
             }
         }
-        
+
         public static bool IsVerticalShipPlacementValid(int startRow, int startCol, int length, char[,] targetGrid)
         {
             if (startRow + length > 10)
